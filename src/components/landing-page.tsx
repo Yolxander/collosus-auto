@@ -10,7 +10,7 @@ import { format } from 'date-fns';
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
-// @ts-ignore
+
 export function LandingPageComponent() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [selectedDate, setSelectedDate] = useState<Date>(new Date());

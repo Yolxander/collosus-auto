@@ -72,7 +72,8 @@ export function LandingPageComponent() {
   const AnimatedSection = ({ children, className, ...props }: { children: React.ReactNode, className?: string, [key: string]: any }) => {
     const controls = useAnimation();
     const ref = useRef(null);
-    // @ts-ignore
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
     const inView = useFramerInView(ref, { threshold: 0.1 });
 
     useEffect(() => {

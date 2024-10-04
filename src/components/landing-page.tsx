@@ -11,25 +11,25 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
 export function LandingPageComponent() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [selectedDate, setSelectedDate] = useState<Date>(new Date())
-  const [selectedTime, setSelectedTime] = useState('')
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [selectedDate, setSelectedDate] = useState<Date>(new Date());
+  const [selectedTime, setSelectedTime] = useState('');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const headerRef = useRef<HTMLDivElement>(null)
-  const { scrollY } = useScroll()
-  const headerTextOpacity = useTransform(scrollY, [0, 100], [0, 1])
-  const headerTextY = useTransform(scrollY, [0, 100], ['50%', '0%'])
-  const headerTextX = useTransform(scrollY, [0, 100], ['50%', '0%'])
-  const headerTextScale = useTransform(scrollY, [0, 100], [0.8, 1])
+  const headerRef = useRef<HTMLDivElement>(null);
+  const { scrollY } = useScroll();
+  const headerTextOpacity = useTransform(scrollY, [0, 100], [0, 1]);
+  const headerTextY = useTransform(scrollY, [0, 100], ['50%', '0%']);
+  const headerTextX = useTransform(scrollY, [0, 100], ['50%', '0%']);
+  const headerTextScale = useTransform(scrollY, [0, 100], [0.8, 1]);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const heroVariants = {
     hidden: { opacity: 0, y: -50 },
@@ -40,10 +40,10 @@ export function LandingPageComponent() {
         duration: 0.8,
         ease: "easeOut",
         when: "beforeChildren",
-        staggerChildren: 0.2
-      }
-    }
-  }
+        staggerChildren: 0.2,
+      },
+    },
+  };
 
   const heroChildVariants = {
     hidden: { opacity: 0, y: -20 },
@@ -52,10 +52,10 @@ export function LandingPageComponent() {
       y: 0,
       transition: {
         duration: 0.5,
-        ease: "easeOut"
-      }
-    }
-  }
+        ease: "easeOut",
+      },
+    },
+  };
 
   const sectionVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -64,24 +64,21 @@ export function LandingPageComponent() {
       y: 0,
       transition: {
         duration: 0.8,
-        ease: "easeOut"
-      }
-    }
-  }
+        ease: "easeOut",
+      },
+    },
+  };
 
   const AnimatedSection = ({ children, className, ...props }: { children: React.ReactNode, className?: string, [key: string]: any }) => {
-    const controls = useAnimation()
-    const ref = useRef(null)
-    const inView = useFramerInView(ref, {
-      // triggerOnce: true,
-      // threshold: 0.1,
-    })
+    const controls = useAnimation();
+    const ref = useRef(null);
+    const inView = useFramerInView(ref, { threshold: 0.1 });
 
     useEffect(() => {
       if (inView) {
-        controls.start("visible")
+        controls.start("visible");
       }
-    }, [controls, inView])
+    }, [controls, inView]);
 
     return (
         <motion.section
@@ -94,12 +91,10 @@ export function LandingPageComponent() {
         >
           {children}
         </motion.section>
-    )
-  }
+    );
+  };
 
-  const timeSlots = [
-    '9:00 AM', '10:00 AM', '11:00 AM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM'
-  ]
+  const timeSlots = ['9:00 AM', '10:00 AM', '11:00 AM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM'];
 
   return (
       <div className="min-h-screen bg-[#343438] text-white">
@@ -173,7 +168,9 @@ export function LandingPageComponent() {
                 <span className="text-[#c95658]">COLLOSUS</span> <br />
                 <span className="text-white">AUTO COLLISION</span>
               </motion.h1>
-              <motion.p variants={heroChildVariants} className="text-xl mb-8 text-white">Elevating automotive excellence through meticulous craftsmanship and cutting-edge technology.</motion.p>
+              <motion.p variants={heroChildVariants} className="text-xl mb-8 text-white">
+                Elevating automotive excellence through meticulous craftsmanship and cutting-edge technology.
+              </motion.p>
             </motion.div>
           </div>
           <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20">

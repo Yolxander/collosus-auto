@@ -69,7 +69,7 @@ export function LandingPageComponent() {
     }
   }
 
-  const AnimatedSection = ({ children, className }: { children: React.ReactNode, className?: string }) => {
+  const AnimatedSection = ({ children, className, ...props }: { children: React.ReactNode, className?: string, [key: string]: any }) => {
     const controls = useAnimation()
     const ref = useRef(null)
     const inView = useFramerInView(ref, {
@@ -90,6 +90,7 @@ export function LandingPageComponent() {
             initial="hidden"
             variants={sectionVariants}
             className={className}
+            {...props}  {/* Spread the remaining props here */}
         >
           {children}
         </motion.section>

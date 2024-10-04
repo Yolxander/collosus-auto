@@ -1,14 +1,14 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { Phone, ChevronDown, Facebook, Twitter, Instagram, Linkedin, Wrench, PaintBucket, Gauge, Menu, X } from 'lucide-react'
-import { motion, useAnimation, useInView as useFramerInView, useScroll, useTransform } from 'framer-motion'
-import { DayPicker } from 'react-day-picker'
-import { format } from 'date-fns'
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
+import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { Phone, ChevronDown, Facebook, Twitter, Instagram, Linkedin, Wrench, PaintBucket, Gauge, Menu, X } from 'lucide-react';
+import { motion, useAnimation, useInView as useFramerInView, useScroll, useTransform } from 'framer-motion';
+import { DayPicker } from 'react-day-picker';
+import { format } from 'date-fns';
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 export function LandingPageComponent() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -73,8 +73,8 @@ export function LandingPageComponent() {
     const controls = useAnimation()
     const ref = useRef(null)
     const inView = useFramerInView(ref, {
-      triggerOnce: true,
-      threshold: 0.1,
+      // triggerOnce: true,
+      // threshold: 0.1,
     })
 
     useEffect(() => {
@@ -199,12 +199,34 @@ export function LandingPageComponent() {
               </div>
               <div className="md:w-1/2 md:pl-12">
                 <p className="text-lg mb-6">
-                  At Collosus Auto Collision, we've been restoring vehicles to their former glory for over two decades. Our team of skilled technicians combines traditional craftsmanship with cutting-edge technology to deliver unparalleled results.
+                  At Collosus Auto Collision, we have been restoring vehicles to their former glory for over two decades. Our team of skilled technicians combines traditional craftsmanship with cutting-edge technology to deliver unparalleled results.
                 </p>
                 <p className="text-lg">
                   From minor dings to major repairs, we treat every vehicle as if it's our own. Trust us to bring your car back to its pristine condition, ensuring both aesthetic and structural integrity.
                 </p>
               </div>
+            </div>
+          </div>
+        </AnimatedSection>
+
+        {/* Services Section */}
+        <AnimatedSection id="services" className="py-20 bg-[#343438]">
+          <div className="container mx-auto px-4">
+            <h2 className="text-4xl font-bold mb-8 text-center text-[#c95658]">Our Services</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[{ title: 'Collision Repair', icon: <Wrench className="w-8 h-8 text-[#c95658]" /> },
+                { title: 'Painting', icon: <PaintBucket className="w-8 h-8 text-[#c95658]" /> },
+                { title: 'Detailing', icon: <Gauge className="w-8 h-8 text-[#c95658]" /> }].map((service, index) => (
+                  <div key={index} className="p-6 bg-[#4d4d4f] rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <div className="flex items-center mb-4">
+                      {service.icon}
+                      <h3 className="text-xl font-bold ml-4">{service.title}</h3>
+                    </div>
+                    <p>
+                      Our dedicated team provides expert services to restore your vehicle's appearance and safety.
+                    </p>
+                  </div>
+              ))}
             </div>
           </div>
         </AnimatedSection>
@@ -294,10 +316,6 @@ export function LandingPageComponent() {
                       caption: "text-[#c95658] font-bold",
                       head_cell: "text-[#c95658]",
                     },
-                  }}
-                  components={{
-                    IconLeft: ({ ...props }) => <ChevronDown className="h-4 w-4 rotate-90" />,
-                    IconRight: ({ ...props }) => <ChevronDown className="h-4 w-4 -rotate-90" />,
                   }}
                 />
               </div>

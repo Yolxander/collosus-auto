@@ -90,7 +90,7 @@ export function LandingPageComponent() {
             initial="hidden"
             variants={sectionVariants}
             className={className}
-            {...props}  {/* Spread the remaining props here */}
+            {...props}
         >
           {children}
         </motion.section>

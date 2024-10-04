@@ -202,7 +202,7 @@ export function LandingPageComponent() {
                   At Collosus Auto Collision, we have been restoring vehicles to their former glory for over two decades. Our team of skilled technicians combines traditional craftsmanship with cutting-edge technology to deliver unparalleled results.
                 </p>
                 <p className="text-lg">
-                  From minor dings to major repairs, we treat every vehicle as if it's our own. Trust us to bring your car back to its pristine condition, ensuring both aesthetic and structural integrity.
+                  From minor dings to major repairs, we treat every vehicle as if it is our own. Trust us to bring your car back to its pristine condition, ensuring both aesthetic and structural integrity.
                 </p>
               </div>
             </div>
@@ -223,7 +223,7 @@ export function LandingPageComponent() {
                       <h3 className="text-xl font-bold ml-4">{service.title}</h3>
                     </div>
                     <p>
-                      Our dedicated team provides expert services to restore your vehicle's appearance and safety.
+                      Our dedicated team provides expert services to restore your vehicle is appearance and safety.
                     </p>
                   </div>
               ))}

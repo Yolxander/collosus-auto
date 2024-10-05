@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Merriweather_Sans, Bebas_Neue } from "next/font/google"; // Update this line
+import { Roboto_Condensed } from "@next/font/google";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -14,15 +14,11 @@ const geistMono = localFont({
     weight: "100 900",
 });
 
-const merriweatherSans = Merriweather_Sans({
-    weight: "400", // You can specify other weights if needed
+const robotoCondensed = Roboto_Condensed({
+    weight: ["400", "700"], // Roboto Condensed has multiple weights
     subsets: ["latin"],
 });
 
-const bebasNeue = Bebas_Neue({
-    weight: "400", // You can specify other weights if needed
-    subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
     title: "Collosus Auto Collision",
@@ -37,7 +33,7 @@ export default function RootLayout({
     return (
         <html lang="en">
         <body
-            className={`${geistSans.variable} ${geistMono.variable} ${merriweatherSans.variable} ${bebasNeue.variable} antialiased`}
+            className={`${geistSans.variable} ${geistMono.variable} ${robotoCondensed.variable} antialiased`}
         >
         {children}
         </body>

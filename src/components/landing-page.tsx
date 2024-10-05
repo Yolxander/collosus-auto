@@ -9,7 +9,7 @@ import AboutSection from "@/components/sections/AboutSection";
 import ServicesSection from "@/components/sections/ServicesSection";
 import GallerySection from "@/components/sections/GallerySection";
 import BookAppointmentSection from "@/components/sections/BookAppointmentSection";
-import { Bebas_Neue, Merriweather_Sans  } from "@next/font/google";
+import { Bebas_Neue, Merriweather_Sans  } from 'next/font/google';
 
 const bebasNeue = Bebas_Neue({
   weight: "400", // Specify the weight if necessary

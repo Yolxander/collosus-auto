@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Roboto_Condensed } from "@next/font/google";
+import { Roboto_Condensed } from 'next/font/google';
 import "./globals.css";
 
 const geistSans = localFont({

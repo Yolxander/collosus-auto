@@ -19,7 +19,7 @@ const ServicesSection = () => {
                             <h3 className="text-xl font-bold ml-4">{service.title}</h3>
                         </div>
                         <p>
-                            Our dedicated team provides expert services to restore your vehicle's appearance and safety.
+                            Our dedicated team provides expert services to restore your vehicle is appearance and safety.
                         </p>
                     </div>
                 ))}

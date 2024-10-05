@@ -14,10 +14,6 @@ const geistMono = localFont({
     weight: "100 900",
 });
 
-const robotoCondensed = Roboto_Condensed({
-    weight: ["400", "700"], // Roboto Condensed has multiple weights
-    subsets: ["latin"],
-});
 
 
 export const metadata: Metadata = {
